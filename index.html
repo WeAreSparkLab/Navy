@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Navy | Hair & Beauty Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:   #0b1628;
+      --navy-mid: #162038;
+      --gold:   #c9a96e;
+      --gold-light: #e4ccA0;
+      --cream:  #f8f5f0;
+      --text:   #1c1c1c;
+      --muted:  #6b6b6b;
+      --card:   #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(11, 22, 40, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.72);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-book {
+      padding: 0.55rem 1.4rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-book:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,0.12) 0%, transparent 60%),
+        linear-gradient(160deg, #0b1628 0%, #162038 55%, #0e1e35 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a96e' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.6;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: "—";
+      margin: 0 0.75rem;
+      opacity: 0.5;
+    }
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(5rem, 14vw, 10rem);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      position: relative;
+    }
+    .hero h1 span {
+      display: block;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-family: "DM Sans", sans-serif;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: rgba(255,255,255,0.5);
+      margin-top: 1.2rem;
+      text-transform: uppercase;
+    }
+    .hero-cta {
+      margin-top: 3rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .btn-primary {
+      padding: 0.9rem 2.4rem;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      padding: 0.9rem 2.4rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.75);
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .hero-scroll::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(201,169,110,0.5), transparent);
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 4rem auto;
+      max-width: 200px;
+    }
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.35;
+    }
+    .divider-diamond {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      opacity: 0.6;
+    }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 5rem 0 6rem;
+    }
+    .section-label {
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 3.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 2.5rem 2rem;
+      border-radius: 2px;
+      border: 1px solid rgba(0,0,0,0.07);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(11,22,40,0.12);
+    }
+    .card:hover::after {
+      transform: scaleX(1);
+    }
+    .card-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(201,169,110,0.18);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── FEATURE STRIP ── */
+    .strip {
+      background: var(--navy);
+      padding: 4rem 2rem;
+    }
+    .strip-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .strip-item strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+    .strip-item span {
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      padding: 7rem 2rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 70% 80% at 50% 50%, rgba(201,169,110,0.08) 0%, transparent 70%),
+        var(--cream);
+    }
+    .cta-banner p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 300;
+      color: var(--navy);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.35;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+    }
+    footer p {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.28);
+      text-transform: uppercase;
+    }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    footer .footer-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer .footer-links a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">Navy</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a class="nav-book" href="#">Book Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Hair &amp; Beauty Studio &middot; Beccles</p>
+    <h1>Navy<span>Where beauty meets artistry</span></h1>
+    <div class="hero-cta">
+      <a class="btn-primary" href="#">Book Appointment</a>
+      <a class="btn-ghost" href="#services">Our Services</a>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <p class="section-label">What we offer</p>
+      <h2 class="section-title">Our Services</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-number">01</div>
+          <h3>Hair Styling &amp; Colour</h3>
+          <p>Precision cuts, balayage, highlights, and modern colour techniques tailored to you.</p>
+        </div>
+        <div class="card">
+          <div class="card-number">02</div>
+          <h3>Nails</h3>
+          <p>Gel polish, BIAB, acrylics, and bespoke nail art crafted to perfection.</p>
+        </div>
+        <div class="card">
+          <div class="card-number">03</div>
+          <h3>Brows &amp; Lashes</h3>
+          <p>Brow shaping, tinting, lash lifts, and extensions for a defined finish.</p>
+        </div>
+        <div class="card">
+          <div class="card-number">04</div>
+          <h3>Beauty Treatments</h3>
+          <p>Facials, skincare, and relaxing beauty therapies for total wellbeing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="strip">
+    <div class="strip-inner">
+      <div class="strip-item">
+        <strong>5★</strong>
+        <span>Client Reviews</span>
+      </div>
+      <div class="strip-item">
+        <strong>10+</strong>
+        <span>Years Experience</span>
+      </div>
+      <div class="strip-item">
+        <strong>15+</strong>
+        <span>Treatments Offered</span>
+      </div>
+      <div class="strip-item">
+        <strong>Beccles</strong>
+        <span>Suffolk</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="divider"><div class="divider-diamond"></div></div>
+    <p>"Exceptional beauty begins with a single appointment."</p>
+    <a class="btn-primary" href="#">Reserve Your Appointment</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Navy</div>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Book</a></li>
+    </ul>
+    <p>&copy; 2026 Navy &middot; Hair &amp; Beauty Studio &middot; Beccles</p>
+    <p style="margin-top:1.25rem; font-size:0.72rem; letter-spacing:0.08em; color:rgba(255,255,255,0.18);">
+      Built by <a href="https://www.wearesparklab.com/studio" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.35); text-decoration:underline; text-underline-offset:3px; transition:color 0.2s;" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">WeAreSparkLab</a>
+    </p>
+  </footer>
+
+</body>
+</html>
+
