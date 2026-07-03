@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Navy | Hair & Beauty Studio</title>
+  <title>Navy | Beauty & Aesthetics Studio, Halesworth</title>
+  <meta name="robots" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -401,10 +402,116 @@
     }
     footer .footer-links a:hover { color: var(--gold); }
 
+    /* ── SOCIAL ICONS ── */
+    .nav-social {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+    .nav-social a {
+      display: flex;
+      color: rgba(255,255,255,0.65);
+      transition: color 0.2s, transform 0.2s;
+    }
+    .nav-social a:hover {
+      color: var(--gold-light);
+      transform: translateY(-1px);
+    }
+    .nav-social svg { width: 18px; height: 18px; }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.32);
+    }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+
+    /* ── CONTACT / FIND US ── */
+    .contact-section {
+      padding: 5rem 0 6rem;
+      background: var(--cream);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contact-card {
+      background: var(--card);
+      border: 1px solid rgba(0,0,0,0.07);
+      border-radius: 2px;
+      padding: 2rem 1.75rem;
+      text-align: center;
+    }
+    .contact-card svg {
+      width: 26px;
+      height: 26px;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .contact-card h4 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+    .contact-card p, .contact-card a {
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-decoration: none;
+      line-height: 1.6;
+    }
+    .contact-card a { transition: color 0.2s; }
+    .contact-card a:hover { color: var(--navy); text-decoration: underline; }
+
+    /* ── REVIEWS ── */
+    .reviews {
+      background: var(--navy);
+      padding: 5rem 2rem;
+    }
+    .reviews .section-label { color: var(--gold); }
+    .reviews .section-title { color: #fff; }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,169,110,0.2);
+      border-radius: 2px;
+      padding: 1.75rem;
+    }
+    .review-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.75rem; letter-spacing: 0.15em; }
+    .review-card p { font-size: 0.88rem; color: rgba(255,255,255,0.75); font-style: italic; margin-bottom: 0.9rem; }
+    .review-card span { font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; text-transform: uppercase; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
+      .nav-social { gap: 0.85rem; }
+      .whatsapp-float { width: 50px; height: 50px; bottom: 1.25rem; right: 1.25rem; }
     }
   </style>
 </head>
@@ -416,18 +523,31 @@
     <a class="nav-logo" href="#">Navy</a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Find Us</a></li>
     </ul>
-    <a class="nav-book" href="#">Book Now</a>
+    <div class="nav-social">
+      <a href="https://instagram.com/navy_halesworth" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.197-4.354-2.618-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61570433353434" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.877h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94z"/></svg>
+      </a>
+    </div>
+    <a class="nav-book" href="https://www.fresha.com/en-GB/a/navy-halesworth-151a-chediston-street-dp1ocbz9/booking?employeeId=3427990&entryPoint=professional_profile_book_now" target="_blank" rel="noopener noreferrer">Book Now</a>
   </nav>
+
+  <!-- WHATSAPP -->
+  <a class="whatsapp-float" href="https://wa.me/447928473209" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.86 9.86 0 0 0 4.74 1.21h.005c5.46 0 9.9-4.45 9.9-9.91C21.93 6.45 17.5 2 12.04 2zm5.8 14.03c-.24.68-1.4 1.3-1.93 1.35-.5.06-1.02.27-3.43-.72-2.9-1.2-4.77-4.15-4.92-4.34-.14-.2-1.17-1.56-1.17-2.98 0-1.42.74-2.11 1-2.4.26-.28.58-.35.77-.35.2 0 .39 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.15.46.13.63-.08.17-.2.72-.84.92-1.13.19-.29.39-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.21.55.33.07.12.07.68-.17 1.36z"/></svg>
+  </a>
 
   <!-- HERO -->
   <section class="hero">
-    <p class="hero-eyebrow">Hair &amp; Beauty Studio &middot; Beccles</p>
+    <p class="hero-eyebrow">Beauty &amp; Aesthetics Studio &middot; Halesworth</p>
     <h1>Navy<span>Where beauty meets artistry</span></h1>
     <div class="hero-cta">
-      <a class="btn-primary" href="#">Book Appointment</a>
+      <a class="btn-primary" href="https://www.fresha.com/en-GB/a/navy-halesworth-151a-chediston-street-dp1ocbz9/booking?employeeId=3427990&entryPoint=professional_profile_book_now" target="_blank" rel="noopener noreferrer">Book Appointment</a>
       <a class="btn-ghost" href="#services">Our Services</a>
     </div>
     <div class="hero-scroll">Scroll</div>
@@ -441,24 +561,51 @@
       <div class="cards">
         <div class="card">
           <div class="card-number">01</div>
-          <h3>Hair Styling &amp; Colour</h3>
-          <p>Precision cuts, balayage, highlights, and modern colour techniques tailored to you.</p>
+          <h3>Nails</h3>
+          <p>OPI gel manicures and acrylic extensions, finished to last.</p>
         </div>
         <div class="card">
           <div class="card-number">02</div>
-          <h3>Nails</h3>
-          <p>Gel polish, BIAB, acrylics, and bespoke nail art crafted to perfection.</p>
+          <h3>Brows</h3>
+          <p>Brow stain, wax, and lamination for a defined, natural shape.</p>
         </div>
         <div class="card">
           <div class="card-number">03</div>
-          <h3>Brows &amp; Lashes</h3>
-          <p>Brow shaping, tinting, lash lifts, and extensions for a defined finish.</p>
+          <h3>Aesthetics</h3>
+          <p>Anti-wrinkle treatments and facial filler, always with a consultation first.</p>
         </div>
         <div class="card">
           <div class="card-number">04</div>
-          <h3>Beauty Treatments</h3>
-          <p>Facials, skincare, and relaxing beauty therapies for total wellbeing.</p>
+          <h3>Tattoo</h3>
+          <p>Bespoke tattoo sessions, from small pieces to longer bookings.</p>
         </div>
+      </div>
+      <p style="text-align:center; margin-top:2.5rem; font-size:0.85rem; color:var(--muted);">
+        Plus 60+ treatments in total &mdash;
+        <a href="https://www.fresha.com/en-GB/p/abbi-ling-4449424" target="_blank" rel="noopener noreferrer" style="color:var(--navy); font-weight:500; text-decoration:underline;">see the full menu &amp; prices on Fresha</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <p class="section-label">5.0 on fresha &middot; 51 reviews</p>
+    <h2 class="section-title">What Clients Say</h2>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Love my nails and I'm so happy with my brows too. Can't recommend Abbi enough!"</p>
+        <span>Jasmine M.</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"So happy with my brow lamination! Abbi's welcoming personality made it even better."</p>
+        <span>Suzanne</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Consistently 5-star service &mdash; booked in again already."</p>
+        <span>Sam M. &amp; Beth K.</span>
       </div>
     </div>
   </section>
@@ -467,19 +614,19 @@
   <div class="strip">
     <div class="strip-inner">
       <div class="strip-item">
-        <strong>5★</strong>
-        <span>Client Reviews</span>
+        <strong>5.0★</strong>
+        <span>51 Reviews on Fresha</span>
       </div>
       <div class="strip-item">
-        <strong>10+</strong>
-        <span>Years Experience</span>
+        <strong>377</strong>
+        <span>Appointments Completed</span>
       </div>
       <div class="strip-item">
-        <strong>15+</strong>
+        <strong>60+</strong>
         <span>Treatments Offered</span>
       </div>
       <div class="strip-item">
-        <strong>Beccles</strong>
+        <strong>Halesworth</strong>
         <span>Suffolk</span>
       </div>
     </div>
@@ -489,7 +636,32 @@
   <section class="cta-banner">
     <div class="divider"><div class="divider-diamond"></div></div>
     <p>"Exceptional beauty begins with a single appointment."</p>
-    <a class="btn-primary" href="#">Reserve Your Appointment</a>
+    <a class="btn-primary" href="https://www.fresha.com/en-GB/a/navy-halesworth-151a-chediston-street-dp1ocbz9/booking?employeeId=3427990&entryPoint=professional_profile_book_now" target="_blank" rel="noopener noreferrer">Reserve Your Appointment</a>
+  </section>
+
+  <!-- FIND US -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <p class="section-label">Get in touch</p>
+      <h2 class="section-title">Find Us</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13z"/><circle cx="12" cy="9" r="2.75"/></svg>
+          <h4>Studio</h4>
+          <a href="https://maps.google.com/?daddr=151A%20Chediston%20Street%2C%20Halesworth%2C%20IP19%208BD%2C%20England" target="_blank" rel="noopener noreferrer">151A Chediston Street,<br>Halesworth, IP19 8BD</a>
+        </div>
+        <div class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.36 1.78.72 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.29a2 2 0 0 1 2.11-.45c.82.36 1.7.6 2.6.72A2 2 0 0 1 22 16.92z"/></svg>
+          <h4>Phone / WhatsApp</h4>
+          <a href="https://wa.me/447928473209" target="_blank" rel="noopener noreferrer">07928 473209</a>
+        </div>
+        <div class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+          <h4>Email</h4>
+          <a href="mailto:navy-salon@outlook.com">navy-salon@outlook.com</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -497,11 +669,11 @@
     <div class="footer-logo">Navy</div>
     <ul class="footer-links">
       <li><a href="#services">Services</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Book</a></li>
+      <li><a href="https://instagram.com/navy_halesworth" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=61570433353434" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <li><a href="https://www.fresha.com/en-GB/a/navy-halesworth-151a-chediston-street-dp1ocbz9/booking?employeeId=3427990&entryPoint=professional_profile_book_now" target="_blank" rel="noopener noreferrer">Book</a></li>
     </ul>
-    <p>&copy; 2026 Navy &middot; Hair &amp; Beauty Studio &middot; Beccles</p>
+    <p>&copy; 2026 Navy &middot; Beauty &amp; Aesthetics Studio &middot; Halesworth</p>
     <p style="margin-top:1.25rem; font-size:0.72rem; letter-spacing:0.08em; color:rgba(255,255,255,0.18);">
       Built by <a href="https://www.wearesparklab.com/studio" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.35); text-decoration:underline; text-underline-offset:3px; transition:color 0.2s;" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">WeAreSparkLab</a>
     </p>
@@ -509,4 +681,3 @@
 
 </body>
 </html>
-
